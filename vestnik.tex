@@ -180,6 +180,48 @@
 }
 
 % ========================================
+% МАКРОСЫ ДЛЯ БИБЛИОГРАФИИ
+% ========================================
+% Требование: список литературы и References с правильным форматированием
+
+% Начало раздела "Список литературы" (полужирный заголовок)
+\newcommand{\bibliographyru}{%
+    \section*{\centering\textbf{Список литературы}}%
+    \addcontentsline{toc}{section}{Список литературы}%
+}
+
+% Подразделы списка литературы
+\newcommand{\bibliosectioncyrillic}{%
+    \subsection*{На русском языке (кириллица)}%
+}
+
+\newcommand{\bibliosectionlatin}{%
+    \subsection*{На западных языках (латиница)}%
+}
+
+\newcommand{\bibliosectionoriental}{%
+    \subsection*{На восточных языках (иероглифика)}%
+}
+
+% Начало раздела "References" (полужирный заголовок)
+\newcommand{\referencesen}{%
+    \section*{\centering\textbf{References}}%
+    \addcontentsline{toc}{section}{References}%
+}
+
+% Окружение для списка литературы без номеров
+\newenvironment{bibliolist}{%
+    \begin{list}{}{%
+        \setlength{\leftmargin}{0pt}%
+        \setlength{\itemindent}{-1.5em}%
+        \setlength{\itemsep}{0.5em}%
+        \setlength{\parsep}{0pt}%
+    }%
+}{%
+    \end{list}%
+}
+
+% ========================================
 % ИНФОРМАЦИЯ О ДОКУМЕНТЕ (Пример заполнения)
 % ========================================
 % Здесь указываются данные для конкретной статьи
@@ -281,12 +323,41 @@
 % ========================================
 % Требование: подстрочные примечания + список литературы (полужирный заголовок)
 % Порядок: кириллица → латиница → иероглифика (алфавитный внутри каждой группы)
-% ТЕКУЩАЯ РЕАЛИЗАЦИЯ: отсутствует
+
+\bibliographyru
+
+% Раздел на русском языке (кириллица)
+\bibliosectioncyrillic
+\begin{bibliolist}
+\item Иванов И.И. Название книги. М.: Издательство, 2020. 200 с.
+\item Петров П.П. Название статьи // Название журнала. 2021. № 1. С. 10--20.
+\end{bibliolist}
+
+% Раздел на западных языках (латиница)
+\bibliosectionlatin
+\begin{bibliolist}
+\item Smith J. Book Title. New York: Publisher, 2019. 300 p.
+\item Johnson M. Article Title // Journal Name. 2020. Vol. 10. No. 2. P. 50--60.
+\end{bibliolist}
+
+% Раздел на восточных языках (иероглифика) - опционально
+% \bibliosectionoriental
+% \begin{bibliolist}
+% \item Транслитерация названия кириллицей [Перевод на русский]. Выходные данные.
+% \end{bibliolist}
 
 % ========================================
-% АНГЛИЙСКАЯ ВЕРСИЯ
+% REFERENCES (АНГЛИЙСКАЯ ВЕРСИЯ СПИСКА ЛИТЕРАТУРЫ)
 % ========================================
-% Требование: Title, Author, Institution, Abstract, Keywords, References
-% ТЕКУЩАЯ РЕАЛИЗАЦИЯ: отсутствует
+% Требование: транслитерация + перевод в квадратных скобках + указание языка
+
+\referencesen
+
+\begin{bibliolist}
+\item Ivanov I.I. Nazvanie knigi [Book Title]. Moscow, Izdatel'stvo Publ., 2020, 200 p. (In Russ.)
+\item Petrov P.P. Nazvanie stat'i [Article Title]. Nazvanie zhurnala [Journal Name], 2021, no. 1, pp. 10--20. (In Russ.)
+\item Smith J. Book Title. New York, Publisher, 2019, 300 p.
+\item Johnson M. Article Title. Journal Name, 2020, vol. 10, no. 2, pp. 50--60.
+\end{bibliolist}
 
 \end{document}
