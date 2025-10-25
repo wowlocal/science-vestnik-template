@@ -77,57 +77,82 @@
 
 \section{Введение}
 
-Текст введения.
+Текст введения. Здесь можно сослаться на источник \bibref{1} или на конкретную страницу \bibref{2, с. 25}.
 
 \section{Основная часть}
 
-Основной текст статьи.
+Основной текст статьи с ссылками на литературу \bibref{3}.
 
 \subsection{Подраздел}
 
-Более детальное содержание в подразделе.
+Более детальное содержание в подразделе с множественными ссылками \bibref{1, 2}.
 
 \section{Заключение}
 
-Текст заключения.
+Текст заключения с выводами исследования \bibref{4}.
 
 % ========================================
 % СПИСОК ЛИТЕРАТУРЫ
 % ========================================
+% Требование: подстрочные примечания + список литературы (полужирный заголовок)
+% Порядок: кириллица → латиница → иероглифика (алфавитный внутри каждой группы)
+%
+% ДОСТУПНЫ ДВА ВАРИАНТА:
+% 1. bibliolistnum - нумерованный список (для ссылок в тексте через \bibref{})
+% 2. bibliolist - ненумерованный список (классический вариант)
 
 \bibliographyru
 
+% ВАРИАНТ 1: Нумерованный список (используется в примере)
+% Используйте этот вариант, если в тексте есть ссылки через \bibref{}
+
 % Раздел на русском языке (кириллица)
 \bibliosectioncyrillic
-\begin{bibliolist}
+\begin{bibliolistnum}
 \item Иванов И.И. Название книги. М.: Издательство, 2020. 200 с.
 \item Петров П.П. Название статьи // Название журнала. 2021. № 1. С. 10--20.
-\end{bibliolist}
+\end{bibliolistnum}
 
 % Раздел на западных языках (латиница)
 \bibliosectionlatin
-\begin{bibliolist}
+\begin{bibliolistnum}
 \item Smith J. Book Title. New York: Publisher, 2019. 300 p.
 \item Johnson M. Article Title // Journal Name. 2020. Vol. 10. No. 2. P. 50--60.
-\end{bibliolist}
+\end{bibliolistnum}
+
+% ВАРИАНТ 2: Ненумерованный список (для справки, закомментирован)
+% Используйте этот вариант, если нумерация источников не требуется
+%
+% \bibliosectioncyrillic
+% \begin{bibliolist}
+% \item Иванов И.И. Название книги. М.: Издательство, 2020. 200 с.
+% \item Петров П.П. Название статьи // Название журнала. 2021. № 1. С. 10--20.
+% \end{bibliolist}
+%
+% \bibliosectionlatin
+% \begin{bibliolist}
+% \item Smith J. Book Title. New York: Publisher, 2019. 300 p.
+% \item Johnson M. Article Title // Journal Name. 2020. Vol. 10. No. 2. P. 50--60.
+% \end{bibliolist}
 
 % Раздел на восточных языках (иероглифика) - опционально
 % \bibliosectionoriental
-% \begin{bibliolist}
+% \begin{bibliolistnum}
 % \item Транслитерация названия кириллицей [Перевод на русский]. Выходные данные.
-% \end{bibliolist}
+% \end{bibliolistnum}
 
 % ========================================
 % REFERENCES (АНГЛИЙСКАЯ ВЕРСИЯ СПИСКА ЛИТЕРАТУРЫ)
 % ========================================
+% Требование: транслитерация + перевод в квадратных скобках + указание языка
 
 \referencesen
 
-\begin{bibliolist}
+\begin{bibliolistnum}
 \item Ivanov I.I. Nazvanie knigi [Book Title]. Moscow, Izdatel'stvo Publ., 2020, 200 p. (In Russ.)
 \item Petrov P.P. Nazvanie stat'i [Article Title]. Nazvanie zhurnala [Journal Name], 2021, no. 1, pp. 10--20. (In Russ.)
 \item Smith J. Book Title. New York, Publisher, 2019, 300 p.
 \item Johnson M. Article Title. Journal Name, 2020, vol. 10, no. 2, pp. 50--60.
-\end{bibliolist}
+\end{bibliolistnum}
 
 \end{document}

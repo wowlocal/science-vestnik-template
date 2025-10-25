@@ -215,4 +215,26 @@
     \end{list}%
 }
 
+% Счетчик для нумерации источников литературы
+\newcounter{biblioitem}
+
+% Окружение для нумерованного списка литературы
+\newenvironment{bibliolistnum}{%
+    \setcounter{biblioitem}{0}%
+    \begin{list}{\arabic{biblioitem}.}{%
+        \usecounter{biblioitem}%
+        \setlength{\leftmargin}{2em}%
+        \setlength{\itemindent}{0pt}%
+        \setlength{\labelsep}{0.5em}%
+        \setlength{\itemsep}{0.5em}%
+        \setlength{\parsep}{0pt}%
+    }%
+}{%
+    \end{list}%
+}
+
+% Команда для ссылки на источник в тексте
+% Использование: \bibref{1} или \bibref{1, с. 25}
+\newcommand{\bibref}[1]{[#1]}
+
 \endinput
