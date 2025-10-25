@@ -1,0 +1,133 @@
+% ========================================
+% ОСНОВНОЙ ДОКУМЕНТ СТАТЬИ
+% ========================================
+% Этот файл содержит только содержимое вашей статьи.
+% Все настройки форматирования находятся в файле vestnik.sty
+
+\documentclass[12pt]{article}
+\usepackage{vestnik}
+
+\begin{document}
+
+% ========================================
+% ЗАГОЛОВОЧНАЯ ЧАСТЬ СТАТЬИ (РУССКИЙ)
+% ========================================
+
+% УДК - укажите код классификации
+\udc{000.00}
+
+% Заголовок статьи на русском
+\articletitleru{Название статьи}
+
+% ФИО автора(ов) на русском
+\authorru{И.О. Фамилия\footnote{%
+    \textbf{Фамилия Имя Отчество} — кандидат наук, должность, Название организации. Email: example@email.com%
+}}
+
+% Организация и адрес
+\institution{Название организации, адрес организации}
+
+% Аннотация (200-300 слов)
+\abstractru{Здесь размещается аннотация объемом 200--300 слов. Аннотация должна кратко излагать содержание статьи, основные результаты исследования и выводы. Текст аннотации должен быть структурированным и информативным, позволяя читателю понять суть работы без обращения к полному тексту.}
+
+% Ключевые слова (5-7 слов)
+\keywordsru{ключевое слово 1, ключевое слово 2, ключевое слово 3, ключевое слово 4, ключевое слово 5}
+
+% Финансирование (опционально, раскомментируйте при необходимости)
+% \funding{Исследование выполнено при поддержке гранта...}
+
+% Для цитирования с DOI
+\forcitation{Фамилия И.О. Название статьи // Вестн. Моск. ун-та. Сер. 13. Востоковедение. 2025. Т. XX, № X. С. 00--00. DOI: 10.55959/MSU0320-8095-13-00-0-0.}
+
+\vspace{1em}
+
+% ========================================
+% ЗАГОЛОВОЧНАЯ ЧАСТЬ СТАТЬИ (АНГЛИЙСКИЙ)
+% ========================================
+
+% Заголовок статьи на английском
+\articletitleen{Article Title}
+
+% Автор(ы) на английском
+\authoren{First M. Last}
+
+% Организация и адрес на английском
+\institutionen{Institution Name, Institution Address}
+
+% About the author - информация об авторах
+\aboutauthor{\textbf{First Middle Last} — PhD, Position, Institution Name. Email: example@email.com}
+
+% Abstract (200-300 words)
+\abstracten{This is the abstract in English with 200--300 words. The abstract should briefly present the content of the article, main research results and conclusions. The text should be structured and informative, allowing readers to understand the essence of the work without referring to the full text.}
+
+% Key words (5-7)
+\keywordsen{keyword 1, keyword 2, keyword 3, keyword 4, keyword 5}
+
+% Funding (опционально, раскомментируйте при необходимости)
+% \fundingen{This research was supported by...}
+
+% For citation с DOI
+\forcitationen{Last F.M. Article Title. Lomonosov Oriental Studies Journal, 2025, Vol. XX, No. X, pp. 00--00. DOI: 10.55959/MSU0320-8095-13-00-0-0 (In Russ.).}
+
+\vspace{1em}
+
+% ========================================
+% ОСНОВНОЙ ТЕКСТ СТАТЬИ
+% ========================================
+
+\section{Введение}
+
+Текст введения.
+
+\section{Основная часть}
+
+Основной текст статьи.
+
+\subsection{Подраздел}
+
+Более детальное содержание в подразделе.
+
+\section{Заключение}
+
+Текст заключения.
+
+% ========================================
+% СПИСОК ЛИТЕРАТУРЫ
+% ========================================
+
+\bibliographyru
+
+% Раздел на русском языке (кириллица)
+\bibliosectioncyrillic
+\begin{bibliolist}
+\item Иванов И.И. Название книги. М.: Издательство, 2020. 200 с.
+\item Петров П.П. Название статьи // Название журнала. 2021. № 1. С. 10--20.
+\end{bibliolist}
+
+% Раздел на западных языках (латиница)
+\bibliosectionlatin
+\begin{bibliolist}
+\item Smith J. Book Title. New York: Publisher, 2019. 300 p.
+\item Johnson M. Article Title // Journal Name. 2020. Vol. 10. No. 2. P. 50--60.
+\end{bibliolist}
+
+% Раздел на восточных языках (иероглифика) - опционально
+% \bibliosectionoriental
+% \begin{bibliolist}
+% \item Транслитерация названия кириллицей [Перевод на русский]. Выходные данные.
+% \end{bibliolist}
+
+% ========================================
+% REFERENCES (АНГЛИЙСКАЯ ВЕРСИЯ СПИСКА ЛИТЕРАТУРЫ)
+% ========================================
+
+\referencesen
+
+\begin{bibliolist}
+\item Ivanov I.I. Nazvanie knigi [Book Title]. Moscow, Izdatel'stvo Publ., 2020, 200 p. (In Russ.)
+\item Petrov P.P. Nazvanie stat'i [Article Title]. Nazvanie zhurnala [Journal Name], 2021, no. 1, pp. 10--20. (In Russ.)
+\item Smith J. Book Title. New York, Publisher, 2019, 300 p.
+\item Johnson M. Article Title. Journal Name, 2020, vol. 10, no. 2, pp. 50--60.
+\end{bibliolist}
+
+\end{document}

@@ -1,0 +1,218 @@
+% ========================================
+% ПАКЕТ VESTNIK.STY
+% ========================================
+% Пакет для оформления статей в журнал "Вестник МГУ. Серия 13. Востоковедение"
+% Версия: 1.0
+% Дата: 2025
+
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{vestnik}[2025/01/25 v1.0 Vestnik MSU formatting package]
+
+% ========================================
+% ПОДДЕРЖКА РУССКОГО ЯЗЫКА
+% ========================================
+\RequirePackage[utf8]{inputenc}      % Кодировка UTF-8 для входных файлов
+\RequirePackage[T2A]{fontenc}        % Кодировка T2A для кириллических шрифтов
+\RequirePackage[russian]{babel}      % Правила переносов и локализация для русского языка
+
+% ========================================
+% ПОЛЯ СТРАНИЦЫ
+% ========================================
+\RequirePackage{geometry}
+\geometry{margin=1in}                % Поля 1 дюйм (2.54 см) со всех сторон
+
+% ========================================
+% ШРИФТ ОСНОВНОГО ТЕКСТА
+% ========================================
+\RequirePackage{newtxtext}           % Шрифт Times New Roman для основного текста
+
+% ========================================
+% МЕЖСТРОЧНЫЙ ИНТЕРВАЛ
+% ========================================
+\RequirePackage{setspace}
+\onehalfspacing                      % Устанавливает межстрочный интервал 1.5
+
+% ========================================
+% АБЗАЦНЫЙ ОТСТУП
+% ========================================
+\setlength{\parindent}{1.25cm}       % Устанавливает отступ первой строки абзаца 1.25 см
+
+% ========================================
+% НАСТРОЙКА СНОСОК
+% ========================================
+\RequirePackage[bottom]{footmisc}    % Размещает сноски внизу страницы
+% Настройка размера шрифта сносок (10pt) и одинарного интервала
+\makeatletter
+\renewcommand\@makefntext[1]{%
+    \setlength{\parindent}{1.25cm}%  % Сохраняем абзацный отступ в сносках
+    \noindent
+    \makebox[1.8em][l]{\@thefnmark}% Номер сноски
+    \fontsize{10}{12}\selectfont     % Шрифт 10pt с интервалом 1.0 (12pt базовая линия)
+    #1%
+}
+\makeatother
+
+% ========================================
+% НУМЕРАЦИЯ СТРАНИЦ
+% ========================================
+\pagestyle{plain}                    % Стиль страницы с номером внизу по центру
+
+% ========================================
+% МАКРОСЫ ДЛЯ СТРУКТУРЫ СТАТЬИ
+% ========================================
+
+% УДК (универсальная десятичная классификация)
+\newcommand{\udc}[1]{%
+    \noindent\textbf{УДК #1}%
+    \par\vspace{0.5em}%
+}
+
+% Заголовок статьи на русском (полужирный, прописные, 14pt)
+\newcommand{\articletitleru}[1]{%
+    \begin{center}
+        \fontsize{14}{16}\selectfont\bfseries\MakeUppercase{#1}
+    \end{center}
+    \vspace{0.3em}
+}
+
+% Автор(ы) на русском (полужирный, 14pt)
+\newcommand{\authorru}[1]{%
+    \begin{center}
+        \fontsize{14}{16}\selectfont\bfseries #1
+    \end{center}
+    \vspace{0.3em}
+}
+
+% Организация и адрес (курсив, 12pt)
+\newcommand{\institution}[1]{%
+    \begin{center}
+        \fontsize{12}{14}\selectfont\itshape #1
+    \end{center}
+    \vspace{0.5em}
+}
+
+% Аннотация на русском (полужирный + курсив, 200-300 слов)
+\newcommand{\abstractru}[1]{%
+    \noindent\textbf{\textit{Аннотация:}} \textit{#1}%
+    \par\vspace{0.5em}%
+}
+
+% Ключевые слова на русском (полужирный + курсив, 5-7 слов)
+\newcommand{\keywordsru}[1]{%
+    \noindent\textbf{\textit{Ключевые слова:}} \textit{#1}%
+    \par\vspace{0.5em}%
+}
+
+% Финансирование (опционально)
+\newcommand{\funding}[1]{%
+    \noindent\textbf{Финансирование:} #1%
+    \par\vspace{0.5em}%
+}
+
+% Блок "Для цитирования"
+\newcommand{\forcitation}[1]{%
+    \noindent\textbf{Для цитирования:} #1%
+    \par\vspace{1em}%
+}
+
+% ========================================
+% МАКРОСЫ ДЛЯ АНГЛИЙСКОЙ ВЕРСИИ
+% ========================================
+
+% Заголовок статьи на английском (bold, uppercase, 14pt)
+\newcommand{\articletitleen}[1]{%
+    \begin{center}
+        \fontsize{14}{16}\selectfont\bfseries\MakeUppercase{#1}
+    \end{center}
+    \vspace{0.3em}
+}
+
+% Автор(ы) на английском (bold, 14pt)
+% Формат: First name, Middle initial, Last name
+\newcommand{\authoren}[1]{%
+    \begin{center}
+        \fontsize{14}{16}\selectfont\bfseries #1
+    \end{center}
+    \vspace{0.3em}
+}
+
+% Организация и адрес на английском (italic, 12pt)
+\newcommand{\institutionen}[1]{%
+    \begin{center}
+        \fontsize{12}{14}\selectfont\itshape #1
+    \end{center}
+    \vspace{0.5em}
+}
+
+% About the author(s) - информация об авторах на английском
+\newcommand{\aboutauthor}[1]{%
+    \noindent\textbf{About the author:} #1%
+    \par\vspace{0.5em}%
+}
+
+% Abstract на английском (bold, italic, 200-300 words)
+\newcommand{\abstracten}[1]{%
+    \noindent\textbf{\textit{Abstract:}} \textit{#1}%
+    \par\vspace{0.5em}%
+}
+
+% Key words на английском (bold, italic, 5-7)
+\newcommand{\keywordsen}[1]{%
+    \noindent\textbf{\textit{Key words:}} \textit{#1}%
+    \par\vspace{0.5em}%
+}
+
+% Финансирование на английском (опционально)
+\newcommand{\fundingen}[1]{%
+    \noindent\textbf{Funding:} #1%
+    \par\vspace{0.5em}%
+}
+
+% Блок "For citation" на английском
+\newcommand{\forcitationen}[1]{%
+    \noindent\textbf{For citation:} #1%
+    \par\vspace{1em}%
+}
+
+% ========================================
+% МАКРОСЫ ДЛЯ БИБЛИОГРАФИИ
+% ========================================
+
+% Начало раздела "Список литературы" (полужирный заголовок)
+\newcommand{\bibliographyru}{%
+    \section*{\centering\textbf{Список литературы}}%
+    \addcontentsline{toc}{section}{Список литературы}%
+}
+
+% Подразделы списка литературы
+\newcommand{\bibliosectioncyrillic}{%
+    \subsection*{На русском языке (кириллица)}%
+}
+
+\newcommand{\bibliosectionlatin}{%
+    \subsection*{На западных языках (латиница)}%
+}
+
+\newcommand{\bibliosectionoriental}{%
+    \subsection*{На восточных языках (иероглифика)}%
+}
+
+% Начало раздела "References" (полужирный заголовок)
+\newcommand{\referencesen}{%
+    \section*{\centering\textbf{References}}%
+    \addcontentsline{toc}{section}{References}%
+}
+
+% Окружение для списка литературы без номеров
+\newenvironment{bibliolist}{%
+    \begin{list}{}{%
+        \setlength{\leftmargin}{0pt}%
+        \setlength{\itemindent}{-1.5em}%
+        \setlength{\itemsep}{0.5em}%
+        \setlength{\parsep}{0pt}%
+    }%
+}{%
+    \end{list}%
+}
+
+\endinput
