@@ -120,6 +120,66 @@
 }
 
 % ========================================
+% МАКРОСЫ ДЛЯ АНГЛИЙСКОЙ ВЕРСИИ
+% ========================================
+% Требование: английские версии всех элементов статьи
+
+% Заголовок статьи на английском (bold, uppercase, 14pt)
+\newcommand{\articletitleen}[1]{%
+    \begin{center}
+        \fontsize{14}{16}\selectfont\bfseries\MakeUppercase{#1}
+    \end{center}
+    \vspace{0.3em}
+}
+
+% Автор(ы) на английском (bold, 14pt)
+% Формат: First name, Middle initial, Last name
+\newcommand{\authoren}[1]{%
+    \begin{center}
+        \fontsize{14}{16}\selectfont\bfseries #1
+    \end{center}
+    \vspace{0.3em}
+}
+
+% Организация и адрес на английском (italic, 12pt)
+\newcommand{\institutionen}[1]{%
+    \begin{center}
+        \fontsize{12}{14}\selectfont\itshape #1
+    \end{center}
+    \vspace{0.5em}
+}
+
+% About the author(s) - информация об авторах на английском
+\newcommand{\aboutauthor}[1]{%
+    \noindent\textbf{About the author:} #1%
+    \par\vspace{0.5em}%
+}
+
+% Abstract на английском (bold, italic, 200-300 words)
+\newcommand{\abstracten}[1]{%
+    \noindent\textbf{\textit{Abstract:}} \textit{#1}%
+    \par\vspace{0.5em}%
+}
+
+% Key words на английском (bold, italic, 5-7)
+\newcommand{\keywordsen}[1]{%
+    \noindent\textbf{\textit{Key words:}} \textit{#1}%
+    \par\vspace{0.5em}%
+}
+
+% Финансирование на английском (опционально)
+\newcommand{\fundingen}[1]{%
+    \noindent\textbf{Funding:} #1%
+    \par\vspace{0.5em}%
+}
+
+% Блок "For citation" на английском
+\newcommand{\citationen}[1]{%
+    \noindent\textbf{For citation:} #1%
+    \par\vspace{1em}%
+}
+
+% ========================================
 % ИНФОРМАЦИЯ О ДОКУМЕНТЕ (Пример заполнения)
 % ========================================
 % Здесь указываются данные для конкретной статьи
@@ -160,6 +220,37 @@
 
 % Для цитирования с DOI
 \citation{Фамилия И.О. Название статьи // Вестн. Моск. ун-та. Сер. 13. Востоковедение. 2025. Т. XX, № X. С. 00--00. DOI: 10.55959/MSU0320-8095-13-00-0-0.}
+
+\vspace{1em}
+
+% ========================================
+% ЗАГОЛОВОЧНАЯ ЧАСТЬ СТАТЬИ (АНГЛИЙСКИЙ)
+% ========================================
+
+% Заголовок статьи на английском (bold, uppercase, 14pt)
+\articletitleen{Article Title}
+
+% Автор(ы) на английском (bold, 14pt)
+% Формат: First name, Middle initial, Last name
+\authoren{First M. Last}
+
+% Организация и адрес на английском (italic, 12pt)
+\institutionen{Institution Name, Institution Address}
+
+% About the author - информация об авторах
+\aboutauthor{\textbf{First Middle Last} — PhD, Position, Institution Name. Email: example@email.com}
+
+% Abstract (bold, italic, 200-300 words)
+\abstracten{This is the abstract in English with 200--300 words. The abstract should briefly present the content of the article, main research results and conclusions. The text should be structured and informative, allowing readers to understand the essence of the work without referring to the full text.}
+
+% Key words (bold, italic, 5-7)
+\keywordsen{keyword 1, keyword 2, keyword 3, keyword 4, keyword 5}
+
+% Funding (опционально, раскомментируйте при необходимости)
+% \fundingen{This research was supported by...}
+
+% For citation с DOI
+\citationen{Last F.M. Article Title. Lomonosov Oriental Studies Journal, 2025, Vol. XX, No. X, pp. 00--00. DOI: 10.55959/MSU0320-8095-13-00-0-0 (In Russ.).}
 
 \vspace{1em}
 

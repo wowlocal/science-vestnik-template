@@ -22,14 +22,14 @@
 - [x] Блок "Для цитирования" с форматом DOI
 
 ### 3. Структура на английском языке
-- [ ] TITLE (bold, uppercase, 14pt)
-- [ ] Author(s) name (bold, 14pt)
-- [ ] Institution and address (italic, 12pt)
-- [ ] About the author(s)
-- [ ] Abstract (bold, italic, 200-300 words)
-- [ ] Key words (bold, italic, 5-7)
-- [ ] Funding (if applicable)
-- [ ] For citation block with DOI
+- [x] TITLE (bold, uppercase, 14pt)
+- [x] Author(s) name (bold, 14pt)
+- [x] Institution and address (italic, 12pt)
+- [x] About the author(s)
+- [x] Abstract (bold, italic, 200-300 words)
+- [x] Key words (bold, italic, 5-7)
+- [x] Funding (if applicable)
+- [x] For citation block with DOI
 
 ### 4. Библиография
 - [ ] Настроить подстрочные примечания (сноски) со сквозной нумерацией
