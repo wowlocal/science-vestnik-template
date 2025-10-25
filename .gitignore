@@ -1,0 +1,32 @@
+# LaTeX временные и выходные файлы
+*.aux
+*.log
+*.out
+*.toc
+*.fdb_latexmk
+*.fls
+*.synctex.gz
+*.bbl
+*.blg
+*.bcf
+*.run.xml
+*.nav
+*.snm
+*.vrb
+
+# Скомпилированные PDF
+*.pdf
+
+# Временные файлы Texpad
+.texpadtmp/
+
+# Локальные настройки Claude
+.claude/settings.local.json
+
+# macOS
+.DS_Store
+
+# Резервные копии редакторов
+*~
+*.swp
+*.swo
