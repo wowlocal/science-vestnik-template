@@ -1,0 +1,126 @@
+% ========================================
+% ПРИМЕР ИСПОЛЬЗОВАНИЯ .BIB ФАЙЛА
+% ========================================
+% Этот файл демонстрирует использование библиографической базы данных
+% через пакет biblatex для автоматической генерации списка литературы
+
+\documentclass[12pt]{article}
+
+% ========================================
+% НАСТРОЙКА BIBLATEX
+% ========================================
+% Подключаем biblatex ДО пакета vestnik
+% Стиль: numeric - нумерованные ссылки [1], [2] и т.д.
+% Сортировка: nyt - по имени, году, названию
+% Опции: autolang=other - поддержка многоязычности
+
+\usepackage[
+    backend=biber,          % Используем biber (современный движок)
+    style=numeric,          % Числовой стиль цитирования [1], [2]
+    sorting=nyt,            % Сортировка: name, year, title
+    maxbibnames=99,         % Показывать всех авторов
+    bibencoding=utf8,       % Кодировка UTF-8
+    autolang=other,         % Автоопределение языка
+]{biblatex}
+
+% Указываем файл с библиографией
+\addbibresource{references.bib}
+
+% Теперь подключаем пакет vestnik
+\usepackage{vestnik}
+
+\begin{document}
+
+% ========================================
+% ЗАГОЛОВОЧНАЯ ЧАСТЬ СТАТЬИ (РУССКИЙ)
+% ========================================
+
+\udc{000.00}
+
+\articletitleru{Пример использования .bib файла}
+
+\authorru{И.О. Фамилия\footnote{%
+    \textbf{Фамилия Имя Отчество} — кандидат наук, должность, Название организации. Email: example@email.com%
+}}
+
+\institution{Название организации, адрес организации}
+
+\abstractru{Эта статья демонстрирует использование файла references.bib для автоматической генерации списка литературы с помощью пакета biblatex. Библиографические ссылки вставляются автоматически, а список формируется на основе цитируемых источников.}
+
+\keywordsru{biblatex, библиография, .bib файл, автоматизация, LaTeX}
+
+\forcitation{Фамилия И.О. Пример использования .bib файла // Вестн. Моск. ун-та. Сер. 13. Востоковедение. 2025. Т. XX, № X. С. 00--00. DOI: 10.55959/MSU0320-8095-13-00-0-0.}
+
+\vspace{1em}
+
+% ========================================
+% ЗАГОЛОВОЧНАЯ ЧАСТЬ СТАТЬИ (АНГЛИЙСКИЙ)
+% ========================================
+
+\articletitleen{Example of Using .bib File}
+
+\authoren{First M. Last}
+
+\institutionen{Institution Name, Institution Address}
+
+\aboutauthor{\textbf{First Middle Last} — PhD, Position, Institution Name. Email: example@email.com}
+
+\abstracten{This article demonstrates the use of references.bib file for automatic bibliography generation using biblatex package. Bibliographic citations are inserted automatically, and the reference list is formed based on cited sources.}
+
+\keywordsen{biblatex, bibliography, .bib file, automation, LaTeX}
+
+\forcitationen{Last F.M. Example of Using .bib File. Lomonosov Oriental Studies Journal, 2025, Vol. XX, No. X, pp. 00--00. DOI: 10.55959/MSU0320-8095-13-00-0-0 (In Russ.).}
+
+\vspace{1em}
+
+% ========================================
+% ОСНОВНОЙ ТЕКСТ СТАТЬИ
+% ========================================
+
+\section{Введение}
+
+При использовании biblatex ссылки на источники вставляются с помощью команды \texttt{\textbackslash cite\{\}}. Например, можно сослаться на книгу Иванова \cite{ivanov2020} или на статью Петрова \cite{petrov2021}.
+
+Также можно указывать конкретные страницы: \cite[с. 25]{smith2019} или \cite[p. 50]{johnson2020}.
+
+\section{Основная часть}
+
+В работе \cite{sidorov2022} рассматриваются современные подходы. Зарубежные исследования \cite{brown2021} дополняют картину.
+
+Множественные ссылки вставляются так: \cite{ivanov2020, petrov2021, smith2019}.
+
+\subsection{Подраздел}
+
+Онлайн-ресурсы также можно цитировать \cite{webresource2023}, как и диссертации \cite{nikolaev2018}.
+
+\section{Заключение}
+
+Использование .bib файла значительно упрощает работу с библиографией, особенно в больших статьях с множеством источников.
+
+% ========================================
+% СПИСОК ЛИТЕРАТУРЫ (АВТОМАТИЧЕСКИ)
+% ========================================
+% При использовании biblatex список литературы генерируется автоматически
+% командой \printbibliography
+
+\printbibliography[title={\centering\textbf{Список литературы}}]
+
+% ========================================
+% ПРИМЕЧАНИЯ
+% ========================================
+%
+% КОМПИЛЯЦИЯ:
+% Для корректной работы с biblatex нужно выполнить последовательность команд:
+% 1. pdflatex article-bibfile.tex
+% 2. biber article-bibfile
+% 3. pdflatex article-bibfile.tex
+% 4. pdflatex article-bibfile.tex
+%
+% Или использовать latexmk для автоматической компиляции:
+% latexmk -pdf -pdflatex="pdflatex -interaction=nonstopmode" article-bibfile.tex
+%
+% РАЗДЕЛЕНИЕ ПО ЯЗЫКАМ:
+% Для разделения списка литературы на кириллицу/латиницу можно использовать
+% фильтры biblatex (см. документацию biblatex или спросите у автора шаблона)
+
+\end{document}
